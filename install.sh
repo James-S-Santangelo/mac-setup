@@ -111,7 +111,7 @@ wget https://packagecontrol.io/Package%20Control.sublime-package -P ~/Library/Ap
 pip3 install flake8  # Required for SublimeLinter Flake8 plugin
 
 # Link Sublime Settings to Sublime Text
-ln -sf ~/github-repos/dotfiles/app-configs/sublime-text.config ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+ln -sf ~/github-repos/mac-setup/app-configs/sublime-text.config ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 
 # ======================
 # Alfred workflows
