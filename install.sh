@@ -53,6 +53,28 @@ brew install --cask adoptopenjdk
 # Install latest version of Python
 brew install python
 
+## Install R
+
+# Install R v. 3.6.3
+wget https://cran.r-project.org/bin/macosx/el-capitan/base/R-3.6.3.pkg -P ~/Downloads/
+open ~/Downloads/R-3.6.3.pkg  # Follow the prompts
+
+# Forget about R 3.6.3 installation to avoid overwriting
+# https://jacobrprice.github.io/2019/09/19/Installing-multiple-parallel-R-versions.html
+sudo pkgutil --forget org.r-project.R.el-capitan.fw.pkg \
+             --forget org.r-project.x86_64.tcltk.x11 \
+             --forget org.r-project.x86_64.texinfo \
+             --forget org.r-project.R.el-capitan.GUI.pkg
+
+# Install latest R
+wget https://cran.r-project.org/bin/macosx/base/R-release.pkg -P ~/Downloads/
+open ~/Downloads/R-release.pkg  # Follow the prompts
+
+# Install RSwitch 
+wget https://rud.is/rswitch/releases/RSwitch-1.7.0.app.zip -P ~/Downloads/ &&
+unzip ~/Downloads/RSwitch-1.7.0.app.zip &&
+mv ~/Downloads/RSwitch.app /Applications/RSwitch.app
+
 # Link files
 git clone https://github.com/James-S-Santangelo/dotfiles.git ~/github-repos/dotfiles
 cp -r ~/github-repos/dotfiles/vim ~/.vim
@@ -76,6 +98,7 @@ brew install --cask spotify  # Music
 brew install --cask zoom  # Zoom video conferencing
 brew install --cask slack  # Slack
 brew install --cask sublime-text  # Sublime Text text-editor
+brew install --cask skim  # Skim PDF reader
 mas install 937984704  # Amphetamine
 
 # Productivity
@@ -100,6 +123,9 @@ brew install --cask vagrant
 brew install --cask vagrant-manager
 brew install --cask virtualbox
 
+# Basic LaTeX
+brew install --cask basictex
+
 # ======================
 # Sublime text config
 # ======================
@@ -112,6 +138,9 @@ pip3 install flake8  # Required for SublimeLinter Flake8 plugin
 
 # Link Sublime Settings to Sublime Text
 ln -sf ~/github-repos/mac-setup/app-configs/sublime-text.config ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+
+# After above 3 commands, open Sublime Text and it will install all packages
+subl
 
 # ======================
 # Alfred workflows
