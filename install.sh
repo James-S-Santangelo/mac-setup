@@ -99,6 +99,7 @@ brew install --cask zoom  # Zoom video conferencing
 brew install --cask slack  # Slack
 brew install --cask sublime-text  # Sublime Text text-editor
 brew install --cask skim  # Skim PDF reader
+brew install --cask adobe-acrobat-reader  # Adobe Acrobat Reader
 mas install 937984704  # Amphetamine
 
 # Productivity
