@@ -93,7 +93,6 @@ echo 'Installing select applications'
 # Misc
 brew install --cask appcleaner  # Easily remove Apps
 brew install --cask brave-browser  # Browser
-brew install --cask lastpass  # Password manager
 brew install --cask spotify  # Music
 brew install --cask zoom  # Zoom video conferencing
 brew install --cask slack  # Slack
@@ -106,12 +105,12 @@ mas install 937984704  # Amphetamine
 brew install --cask rectangle  # Window movement/resizing
 brew install --cask alfred  # Hotkeys, workflows and easy Mac/Web access and automation
 brew install --cask notion  # Notes and life organization
-mas install 585829637  # Todoist
-mas install 918858936  # Airmail 4
+brew install bitwarden-cli  # Command-line interface for bitwarden
+mas install 1176895641  # Spark mail client
 
 # Cloud storage
 brew install --cask sync  # Sync.com
-brew install --cask google-backup-and-sync  # Google Drive
+brew install --cask google-drive  # Google drive
 brew install --cask dropbox  # Dropbox
 
 # Microsoft office
@@ -147,17 +146,8 @@ subl
 # Alfred workflows
 # ======================
 
-# It's easiest to install these manually by double clicking on them
-mkdir alfred-workflows
+# These are installed manually
 
-# Download Last pass workflow for Alfred 4.
-# LastPass Alfred workflow doesn't work straight out of the box with Alfred 4
-# See https://github.com/stuartcryan/lastpass-alfred-workflow/issues/54
-wget https://github.com/stuartcryan/lastpass-alfred-workflow/blob/master/lastpass-cli-alfred-workflow.alfredworkflow?raw=true -P alfred-workflows
-brew install lastpass-cli  # Command-line tools for password manager
-sudo cpan install Capture::Tiny  # Required for LastPass workflow in Alfred
-
-# Spotify
-# See https://alfred-spotify-mini-player.com/setup/ for stup instructions
-wget https://github.com/vdesabou/alfred-spotify-mini-player/releases/latest/download/spotifyminiplayer.alfredworkflow -P alfred-workflows
+# Bitwarden
+# https://github.com/blacs30/bitwarden-alfred-workflow/releases
 
