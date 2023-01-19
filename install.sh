@@ -1,30 +1,24 @@
 # ======================
-# Brew, mas, Xcode
+# Brew, mas
 # ======================
+
+# Install XCode command-line tools
+xcode-select --install
 
 # Install Homebrew if it doesn't exist
 # This will also install XCode command-line tools
-if test ! $(which brew)
-then
-	echo "Installing Homebrew"
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
+echo "Installing Homebrew"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install Mac App Store CLI
 echo 'Installing Mac App Store command-line tools'
 brew install mas
 
-# Ensure latest version of Xcode is installed
-# Note: Need to sign in to Mac App Store manually
-# See https://github.com/mas-cli/mas/issues/164
-echo 'Updating Xcode'
-mas install 497799835
-
 # ======================
 # Languages and Bash
 # ======================
 
-# Install bash and make default shell
+# Install more recent bash and make default shell
 # Password required
 echo 'Installing bash'
 brew install bash &&
@@ -44,7 +38,6 @@ echo 'Installing utilities'
 brew install wget
 brew install openconnect  # VPN (substitute for Cisco AnyConnect)
 brew install coreutils  # Replace default Mac utils with GNU coreutils
-brew install tmux  # Multiple interactive terminal windows
 brew install tree  # Depict directory structure as tree
 
 # Install latest Java JRE
@@ -77,13 +70,8 @@ mv ~/Downloads/RSwitch.app /Applications/RSwitch.app
 
 # Link files
 git clone https://github.com/James-S-Santangelo/dotfiles.git ~/github-repos/dotfiles
-cp -r ~/github-repos/dotfiles/vim ~/.vim
-ln -sf ~/github-repos/dotfiles/bashrc ~/.bashrc
-ln -sf ~/github-repos/dotfiles/bash_profile ~/.bash_profile
-ln -sf ~/github-repos/dotfiles/vimrc ~/.vimrc
-ln -sf ~/github-repos/dotfiles/gitconfig ~/.gitconfig
+bash ~/github-repos/dotfiles/scripts/create_symlinks.sh
 source ~/.bashrc  # Re-initialize shell
-vim +PluginInstall +qall  # Install Vim Plugins
 
 # ====================
 # App installs
@@ -97,16 +85,18 @@ brew install --cask spotify  # Music
 brew install --cask zoom  # Zoom video conferencing
 brew install --cask slack  # Slack
 brew install --cask sublime-text  # Sublime Text text-editor
-brew install --cask skim  # Skim PDF reader
 brew install --cask adobe-acrobat-reader  # Adobe Acrobat Reader
+brew install --cask rstudio # For local R developement
+brew install --cask signal # For messaging
 mas install 937984704  # Amphetamine
 
 # Productivity
 brew install --cask rectangle  # Window movement/resizing
 brew install --cask alfred  # Hotkeys, workflows and easy Mac/Web access and automation
-brew install --cask notion  # Notes and life organization
+brew install --cask obsidian  # Notes and life organization
 brew install bitwarden-cli  # Command-line interface for bitwarden
-mas install 1176895641  # Spark mail client
+brew install --cask thunderbird # Email client
+brew install --cask todoist # Task manager
 
 # Cloud storage
 brew install --cask sync  # Sync.com
